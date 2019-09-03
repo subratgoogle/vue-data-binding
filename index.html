@@ -1,0 +1,49 @@
+<html>
+    <head>
+<title>vue js file</title>
+<script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+<style>
+    .fiximagesize{
+        height:300px;
+        width: 500px;
+    }
+</style>
+    </head>
+    <body>
+        <div id="my-app">
+           Name : {{ name }} <br/>
+           Channel Link : {{ ulink }}
+
+           <br/>
+           <a href="{{ ulink }}">{{ name }}</a>  <br/>
+           <!-- v-bind use in the short to symbol of colon(:) before to any attribute  -->
+
+           <!-- v-bind use for see link or other element of js file in inspect system -->
+           <!-- title use for hover of link system -->
+           <a v-bind:href="ulink" v-bind:title="title">{{ name }}</a>  <br/>
+           <!-- html class binding -->
+           <img v-bind:src="imageLink" v-bind:class="{fiximagesize:isActive}">
+           
+           <br/>
+           <!--  End hmtl class binding -->
+           <!-- start html form input binding -->
+  
+           <form method="POST">
+             <input type="text" v-bind:value="txtName" placeholder="Name">
+             
+             <input type="text" v-bind:value="txtEmail" placeholder="Email">
+             
+             <button>Submit</button>
+
+           </form>
+           <br/>
+
+           {{ htmlContent }}
+           <!--if remove p tag in to output-->
+           <!--basically v-html use for change string in to html tag -->
+           <div v-html="htmlContent"></div>
+
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
